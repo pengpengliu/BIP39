@@ -27,8 +27,22 @@ class MnemonicTests: XCTestCase {
         XCTAssertThrowsError(try Mnemonic(phrase: "sleep kitten sleep kitten sleep kitten sleep kitten sleep kitten sleep kitten".components(separatedBy: " ")), "fails for invalid checksum")
     }
     
-    func testExample() {
+    func testSeed() {
         let m = try? Mnemonic(phrase: "rally speed budget undo purpose orchard hero news crunch flush wine finger".components(separatedBy: " "), passphrase: "123")
         XCTAssertEqual(m?.seed.map{ String(format: "%02X", $0) }.joined(), "20A4F771F4146E41E0144D2F713D747FDCF8F2B53C441061DE9667FDE03B2157100536FC2F4D11F3D7B40721FF438AF7AAC34CF709E0DC307838767782A7C040")
     }
+    
+    func testExample() {
+        let m1 = Mnemonic()
+        let m2 = try? Mnemonic(phrase: m1.phrase, passphrase: "")
+        XCTAssertEqual(m1, m2)
+    }
+
+    func testPerformanceExample() {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
+
 }
