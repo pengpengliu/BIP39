@@ -21,7 +21,7 @@ public class Mnemonic {
     let passphrase: String
     
     init(strength: Int = 128, wordlist: [String] = Wordlists.english) {
-        precondition(strength % 32 != 0, "Invalid entropy")
+        precondition(strength % 32 == 0, "Invalid entropy")
         
         // 1.Random Bytes
         var bytes = [UInt8](repeating: 0, count: strength / 8)
