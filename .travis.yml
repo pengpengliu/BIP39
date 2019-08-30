@@ -1,0 +1,6 @@
+language: swift
+osx_image: xcode11
+script:
+  - xcodebuild -scheme BIP39 -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=12.1' build test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
