@@ -9,6 +9,8 @@ Swift implementation of Bitcoin [BIP39](https://github.com/bitcoin/bips/blob/mas
 
 ## Getting Started
 
+You can just drop `Mnemonic.swift` `Wordlists.swift` `PKCS5.swift` into your project.
+
 ```swift
 import BIP39
 
