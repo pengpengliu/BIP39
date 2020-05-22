@@ -26,6 +26,11 @@ final class BIP39Tests: XCTestCase {
         let m = try? Mnemonic(phrase: "rally speed budget undo purpose orchard hero news crunch flush wine finger".components(separatedBy: " "), passphrase: "123")
         XCTAssertEqual(m?.seed.map{ String(format: "%02X", $0) }.joined(), "20A4F771F4146E41E0144D2F713D747FDCF8F2B53C441061DE9667FDE03B2157100536FC2F4D11F3D7B40721FF438AF7AAC34CF709E0DC307838767782A7C040")
     }
+    
+    func testEntropy() {
+        let mnemonic = try? Mnemonic(phrase: "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about".components(separatedBy: " "), passphrase: "")
+        XCTAssertEqual(try! Mnemonic.toEntropy(mnemonic!.phrase).map { String(format:"%02X", $0) }.joined(separator: ""), "00000000000000000000000000000000")
+    }
 
     static var allTests = [
         ("testExample", testExample),
