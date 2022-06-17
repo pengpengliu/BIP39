@@ -9,7 +9,7 @@ Swift implementation of Bitcoin [BIP39](https://github.com/bitcoin/bips/blob/mas
 let random = Mnemonic()
 
 // Initialize with seed phrase and passphrase
-let mnemonic = Mnemonic(phrase: "rally speed budget undo purpose orchard hero news crunch flush wine finger".components(separatedBy: " "), passphrase: "")
+let mnemonic = Mnemonic(phrase: "It is important to carefully choose the wallet you use, as it has your secret key, and with it comes full control of your account.".components(separatedBy: " "), passphrase: "")
 
 // From mnemonic to seed
 let seed = mnemonic.seed
