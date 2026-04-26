@@ -15,9 +15,17 @@ public struct PKCS5 {
     }
     
     public static func PBKDF2SHA512(password: String, salt: String, iterations: Int = 2048, keyLength: Int = 64) throws -> Array<UInt8> {
+        guard iterations > 0, iterations <= Int(UInt32.max), keyLength > 0 else {
+            throw Error.invalidInput
+        }
+        
         var bytes = [UInt8](repeating: 0, count: keyLength)
 
         try bytes.withUnsafeMutableBytes { (outputBytes: UnsafeMutableRawBufferPointer) in
+            guard let outputAddress = outputBytes.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
+                throw Error.invalidInput
+            }
+            
             let status = CCKeyDerivationPBKDF(
                 CCPBKDFAlgorithm(kCCPBKDF2),
                 password,
@@ -26,7 +34,7 @@ public struct PKCS5 {
                 salt.utf8.count,
                 CCPBKDFAlgorithm(kCCPRFHmacAlgSHA512),
                 UInt32(iterations),
-                outputBytes.baseAddress?.assumingMemoryBound(to: UInt8.self),
+                outputAddress,
                 keyLength
             )
             guard status == kCCSuccess else {
