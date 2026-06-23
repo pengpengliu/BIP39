@@ -2,6 +2,11 @@
 
 [English](README.md) | **简体中文**
 
+[![Swift](https://img.shields.io/badge/Swift-5.1+-orange.svg)](https://swift.org)
+[![Platforms](https://img.shields.io/badge/Platforms-macOS%20%7C%20iOS-lightgrey.svg)](https://developer.apple.com)
+[![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager)
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](LICENSE.txt)
+
 比特币 [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 助记词生成、校验、熵转换以及种子派生的 Swift 实现。
 
 ## 环境要求

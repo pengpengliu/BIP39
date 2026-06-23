@@ -2,6 +2,11 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
+[![Swift](https://img.shields.io/badge/Swift-5.1+-orange.svg)](https://swift.org)
+[![Platforms](https://img.shields.io/badge/Platforms-macOS%20%7C%20iOS-lightgrey.svg)](https://developer.apple.com)
+[![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager)
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](LICENSE.txt)
+
 Swift implementation of Bitcoin [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemonic generation, validation, entropy conversion, and seed derivation.
 
 ## Requirements
