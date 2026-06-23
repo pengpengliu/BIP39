@@ -1,5 +1,7 @@
 # BIP39
 
+**English** | [简体中文](README.zh-CN.md)
+
 Swift implementation of Bitcoin [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemonic generation, validation, entropy conversion, and seed derivation.
 
 ## Requirements
